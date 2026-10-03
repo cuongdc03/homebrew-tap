@@ -11,11 +11,11 @@ cask "brew-hub" do
   homepage "https://github.com/cuongdc03/brew-hub"
 
   auto_updates true
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "brew-hub.app"
 
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/brew-hub.app"],
                    sudo: false
