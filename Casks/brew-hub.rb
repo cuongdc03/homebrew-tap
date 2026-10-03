@@ -11,7 +11,7 @@ cask "brew-hub" do
   homepage "https://github.com/cuongdc03/brew-hub"
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: :big_sur
 
   app "brew-hub.app"
 
