@@ -1,9 +1,9 @@
 cask "brew-hub" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.1.2"
-  sha256 arm:   "42b70dc9f6f28a6a841aa896691067975b862f618518867241e4222188bfa7c8",
-         intel: :no_check
+  version "0.2.0"
+  sha256 arm:   "a05ee5516ca25495a7ed7530940022f8a8ee6e30298f7ffefd885bfcdfb6c504",
+         intel: "900fbe04d0931659b33bb48ffd37c6845ead61c06c3b1aec63fed0831809344b"
 
   url "https://github.com/cuongdc03/brew-hub/releases/download/v#{version}/brew-hub_#{version}_#{arch}.dmg"
   name "Brew Hub"
@@ -14,12 +14,6 @@ cask "brew-hub" do
   depends_on :macos
 
   app "brew-hub.app"
-
-  postflight_steps do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/brew-hub.app"],
-                   sudo: false
-  end
 
   zap trash: [
     "~/Library/Application Support/com.cuong.brew-hub",
